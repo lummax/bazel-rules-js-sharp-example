@@ -1,0 +1,5 @@
+build --incompatible_strict_action_env
+
+# See also: https://github.com/aspect-build/rules_js/issues/217
+build --action_env APPDATA=unused --host_action_env APPDATA=unused
+

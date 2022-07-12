@@ -1,0 +1,15 @@
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
+load("@npm_icon_converter//:defs.bzl", "npm_link_all_packages")
+
+npm_link_all_packages(name = "node_modules")
+
+js_binary(
+    name = "icon-converter",
+    data = [
+        ":node_modules/@ant-design/icons-svg",
+        ":node_modules/commander",
+        ":node_modules/jsdom",
+        ":node_modules/sharp",
+    ],
+    entry_point = "src/index.js",
+)
